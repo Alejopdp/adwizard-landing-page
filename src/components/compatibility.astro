@@ -5,34 +5,19 @@ import type { CompatibilityItem } from "~/types";
 
 const frameworks: Array<CompatibilityItem> = [
   {
-    title: "React",
+    title: "SwiftUI",
     icon: "frameworks/react",
     url: "https://reactjs.org/",
   },
   {
-    title: "Preact",
-    icon: "frameworks/preact",
-    url: "https://preactjs.com/",
-  },
-  {
-    title: "Svelte",
+    title: "Web JS",
     icon: "frameworks/svelte",
     url: "https://svelte.dev/",
   },
   {
-    title: "Vue",
+    title: "React Native",
     icon: "frameworks/vue",
     url: "https://vuejs.org/",
-  },
-  {
-    title: "Solid",
-    icon: "frameworks/solid",
-    url: "https://www.solidjs.com/",
-  },
-  {
-    title: "Lit",
-    icon: "frameworks/lit",
-    url: "https://lit.dev/",
   },
 ];
 
@@ -72,18 +57,16 @@ const platforms: Array<CompatibilityItem> = [
 
 <ContentSection title="Compatibility" id="compatibility">
   <Fragment slot="lead">
-    Astro <span class="text-primary">plays nice</span>. Bring your own UI{" "}
-    <span class="text-primary">framework</span>
-    and deploy to your favorite <span class="text-primary">platform</span>.
+    AdWizard <span class="text-primary">plays nice</span>.
   </Fragment>
   <CompatibilityList
     items={frameworks}
     title="Frameworks"
     url="https://docs.astro.build/core-concepts/framework-components/"
   />
-  <CompatibilityList
+  <!-- <CompatibilityList
     items={platforms}
     title="Platforms"
     url="https://docs.astro.build/guides/deploy/"
-  />
+  /> -->
 </ContentSection>
