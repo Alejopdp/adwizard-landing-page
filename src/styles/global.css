@@ -2,11 +2,11 @@
 a,
 .btn {
   @apply transition-colors duration-200;
-  @apply hover:text-secondary;
-  @apply focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 focus:ring-offset-transparent;
+  @apply hover:text-white; /* Cambiado a blanco para contrastar con el fondo oscuro */
+  @apply focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent; /* Ajustado el color del anillo de enfoque */
 }
 
 .gradient-text {
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-indigo-500 via-fuchsia-500 to-pink-500;
+  @apply bg-gradient-to-br from-gray-700 via-gray-800 to-gray-900; /* Gradiente oscuro acorde a tu color principal (#18181b) */
 }
