@@ -6,18 +6,18 @@ import type { CompatibilityItem } from "~/types";
 const frameworks: Array<CompatibilityItem> = [
   {
     title: "SwiftUI",
-    icon: "frameworks/react",
+    icon: "frameworks/swift",
     url: "https://developer.apple.com/xcode/swiftui/",
   },
   {
-    title: "Web JS",
-    icon: "frameworks/svelte",
-    url: "https://svelte.dev/",
+    title: "JS",
+    icon: "frameworks/js",
+    url: "https://www.npmjs.com/package/adwizard-web-sdk",
   },
   {
     title: "React Native",
-    icon: "frameworks/vue",
-    url: "https://vuejs.org/",
+    icon: "frameworks/react",
+    url: "https://www.npmjs.com/package/adwizard-web-sdk",
   },
 ];
 
@@ -25,11 +25,11 @@ const frameworks: Array<CompatibilityItem> = [
 
 <ContentSection title="Compatibility" id="compatibility">
   <Fragment slot="lead">
-    AdWizard <span class="text-primary">plays nice</span>.
+    <span class="text-primary">Enchant your apps with AdWizard’s universal compatibility</span>.
   </Fragment>
   <CompatibilityList
     items={frameworks}
-    title="Frameworks"
+    title="SDKs"
     url="https://docs.astro.build/core-concepts/framework-components/"
   />
   <!-- <CompatibilityList

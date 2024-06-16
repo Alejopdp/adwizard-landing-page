@@ -1,48 +1,35 @@
 ---
-import CompatibilityList from "~/components/compatibility-list.astro";
 import ContentSection from "~/components/content-section.astro";
-import type { CompatibilityItem } from "~/types";
-import { isEmailValid } from "../utils/index";
-import { sendContactUsForm } from "../api/api";
 import { Icon } from "astro-icon/components";
-const errors = { name: "", email: "" };
+import checkSuccess from "~/assets/check-success.svg";
+import { Image } from "astro:assets";
+
 const INPUT_CLASS = "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
 const LABEL_CLASS = "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
 
 
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData();
-    const name = data.get("name");
-    const email = data.get("email");
-
-    if (typeof name !== "string" || name.length < 1) {
-      errors.name += "Please enter your name. ";
-    }
-    if (typeof email !== "string" || !isEmailValid(email)) {
-      errors.email += "Email is not valid. ";
-    }
-
-    const hasErrors = Object.values(errors).some(msg => msg)
-    if (!hasErrors) {
-      await sendContactUsForm(name as string, email as string);
-      return Astro.redirect("/login");
-    }
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    }
-  }
-}
-
 ---
+
+
 
 <ContentSection title="Contact us" id="contact">
   <Fragment slot="lead">
-    Want to see <span class="text-primary">a trick</span>.
+    Step into the magic circle.
   </Fragment>
- 
-<form method="POST" class="flex flex-col gap-8 w-full max-w-lg">
+
+<div id="success-message" class="hidden transition-opacity duration-500 opacity-0">
+  <Image
+        class="h-52 w-52 m-auto object-cover"
+        src={checkSuccess}
+        loading="eager"
+        alt="A floating astronaut in a space suit"
+      />
+  <h2 class="text-2xl font-bold text-center">Spell received
+    </h2>
+  <p class="text-center">Our owl will deliver a response shortly.</p>
+</div>
+
+<form id="contact-form" method="POST" class="flex flex-col gap-8 w-full max-w-lg transition-opacity duration-500">
   <div class="flex flex-col">
   <label  class={LABEL_CLASS}>
     Name
@@ -57,18 +44,17 @@ if (Astro.request.method === "POST") {
 </div>
 <div class="flex flex-col">
   <label  class={LABEL_CLASS}>
-    Website
+    Company name
   </label>
-    <input class={INPUT_CLASS} type="text" name="website" required />
+    <input class={INPUT_CLASS} type="text" name="companyName" required placeholder="Hogwarts Inc."/>
 </div>
 <div class="flex m-auto">
-  <a
-    href="#contact"
-    class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 hover:bg-primary"
+  <button
+    class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4 hover:bg-primary group"
   >
-    <Icon name="mdi:wand" class="size-8" />
-    <span>Send data</span>
-  </a>
+    <Icon name="mdi:wand" class="size-8 group-hover:text-tertiary"/>
+    <span class="hover:text-white group-hover:text-white">Cast the Spell</span>
+  </button>
 </div>
 </form>
 </ContentSection>

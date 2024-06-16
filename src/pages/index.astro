@@ -59,6 +59,43 @@ const description =
           }
         });
     </script>
+    <script>
+      // Get the form reference
+      const form = document.querySelector("form");
+
+    
+      if (form) {
+        // listen to the submit event of the form
+        form.addEventListener("submit", function (e) {
+          const formData = new FormData(form)
+      // Create a JSON object from the form data
+      const body = {
+        name: formData.get("name"),
+        email: formData.get("email"),
+        companyName: formData.get("companyName"),
+      }
+          // Avoid to page flickering and deal with the form client side
+          e.preventDefault();
+    
+          fetch("https://adwizard.up.railway.app/api/v1/contact", {
+            method: form.method,
+            body: JSON.stringify(body),
+            headers: {
+              accept: "application/json",
+            },
+          }, ).then((res) => res.json()).then(data => {
+              if (!data.error) {
+                form.classList.add('opacity-0');
+                form?.classList.add('hidden');
+                document.getElementById('success-message')?.classList.remove('hidden');
+                document.getElementById('success-message')?.classList.add('opacity-100');
+              } else {
+                alert("Failed to submit form. Please try again later.");
+              }
+            })
+        });
+      }
+    </script>
   </head>
   <body
     class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
@@ -70,7 +107,6 @@ const description =
       <HowItWorks />
       <Compatibility />
       <Contact />
-      <!-- <Showcase /> -->
     </div>
     <Footer />
   </body>

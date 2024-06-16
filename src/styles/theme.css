@@ -6,6 +6,7 @@
   --color-background: theme("colors.gray.50");
   --color-background-offset: theme("colors.gray.100");
   --color-border: theme("colors.gray.900" / 10%);
+  --color-gold: #E6AF2E
 }
 
 [data-theme="dark"] {

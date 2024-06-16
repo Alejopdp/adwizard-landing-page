@@ -26,12 +26,12 @@ const howItWorks: Array<FeatureItem> = [
 ---
 
 <ContentSection title="How it works" id="how-it-works">
-  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+  <ul class="grid max-w-6xl grid-cols-1 lg:grid-cols-3">
     {
       howItWorks.map(({ title, description, icon }) => (
         <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
-          <div class="size-16 rounded-full border-2 border-current p-3">
-            <Icon name={icon} class="size-full" />
+          <div class="size-16 rounded-full border-2 border-tertiary p-3">
+            <Icon name={icon} class="size-full text-tertiary" />
           </div>
           <p class="text-center font-extrabold text-xl">{title}</p>
           <p class="text-center text-offset text-sm">{description}</p>

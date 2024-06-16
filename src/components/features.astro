@@ -7,37 +7,37 @@ const features: Array<FeatureItem> = [
   {
     title: "Measure your marketing ROI",
     description:
-      "Our platform allows you to measure the effectiveness of your marketing campaigns and make data-driven decisions.",
+      "Witness the impact of your campaigns with precise ROI measurements, empowering you to make strategic decisions.",
     icon: "mdi:handshake",
   },
   {
     title: "Understand your users behavior",
     description:
-      "Adwizard provides you with detailed insights about your users, so you can understand their behavior and make informed decisions.",
+      "Unveil deep insights into user behavior, illuminating pathways to enhance engagement and satisfaction.",
     icon: "mdi:feather",
   },
   {
     title: "Cross-platform support",
     description:
-      "Adwizard is a cross-platform solution that works on all devices, so you can reach your audience wherever they are.",
+      "Reach across realms with seamless support for all devices, ensuring your message transcends barriers.",
     icon: "mdi:directions-fork",
   },
   {
     title: "Easy Integration",
     description:
-      "Integrate effortlessly with our lightweight SDKs for iOS, Android, React Native, and Web.",
+      "Effortlessly integrate spells—uh, we mean, integrate our lightweight SDKs across iOS, Android, React Native, and Web.",
     icon: "mdi:graph",
   },
   {
     title: "Comprehensive Analytics",
     description:
-      "Combine marketing and product analytics to gain deeper insights into user behavior.",
+      "Gather arcane insights by fusing marketing and product analytics, revealing hidden patterns in user behavior.",
     icon: "mdi:search-web",
   },
   {
     title: "Privacy First",
     description:
-      "Our platform anonymizes user data, ensuring compliance with all privacy regulations.",
+      "Safeguard user identities with a veil of anonymity, ensuring compliance with the strictest privacy enchantments.",
     icon: "mdi:account-group",
   },
 ];
@@ -46,17 +46,14 @@ const features: Array<FeatureItem> = [
 <ContentSection title="Features" id="features">
   <!-- <Fragment slot="lead">
     
-    Astro comes <span class="text-primary">batteries included</span>. It takes
-    the best parts of
-    <span class="text-primary">state-of-the-art</span>
-    tools and adds its own <span class="text-primary">innovations</span>.
+    Explore Our Suite of Spells
   </Fragment> -->
   <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
     {
       features.map(({ title, description, icon }) => (
         <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
-          <div class="size-16 rounded-full border-2 border-current p-3">
-            <Icon name={icon} class="size-full" />
+          <div class="size-16 rounded-full border-2 p-3 border-tertiary">
+            <Icon name={icon} class="size-full text-tertiary" />
           </div>
           <p class="text-center font-extrabold text-xl">{title}</p>
           <p class="text-center text-offset text-sm">{description}</p>
