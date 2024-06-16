@@ -8,11 +8,11 @@ module.exports = {
         sans: ["Inter Variable", ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: "#18181b",
+        primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
       },
       textColor: {
-        default: "#18181b",
+        default: "var(--color-text)",
         offset: "var(--color-text-offset)",
       },
       backgroundColor: {
